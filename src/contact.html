@@ -1,0 +1,413 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<!-- ─── HERO ─── -->
+<section class="page-hero">
+  <div class="container position-relative" style="z-index:1">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="page-hero-label">Get In Touch</div>
+        <h1 class="page-hero-title">Let's start a <em>conversation</em></h1>
+        <p class="page-hero-sub">Whether you have a quick question or want a live demo, our team responds to every message — usually within a few hours.</p>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <a href="#contact-form" class="btn-primary-lum">Send a message <i class="bi bi-arrow-right"></i></a>
+          <button type="button" class="btn-ghost-lum" style="padding:0.62rem 1.2rem;font-size:0.84rem;"
+            data-bs-toggle="modal" data-bs-target="#demoModal">
+            Book a demo <i class="bi bi-calendar-check"></i>
+          </button>
+        </div>
+        <p class="mt-3" style="font-size:0.75rem;color:var(--ink-soft)">
+          <i class="bi bi-patch-check-fill" style="color:var(--accent);margin-right:0.3rem"></i>
+          Trusted by <strong>1,200+ teams</strong> &nbsp;·&nbsp; Avg. reply under 3 hours
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT SECTION ─── -->
+<section class="contact-section" id="contact-form">
+  <div class="container">
+    <div class="contact-row reveal">
+
+      <!-- LEFT: FORM -->
+      <div class="contact-col-left">
+        <div class="section-label">Send a Message</div>
+        <h2 class="section-title">We'd love to <em>hear from you</em> — let's build something great.</h2>
+
+        <div class="form-card mt-3" id="formCard">
+          <form id="contactForm" novalidate>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="form-group-lum">
+                  <label class="form-label-lum" for="firstName">First Name <span style="color:var(--accent)">*</span></label>
+                  <input class="form-control-lum" id="firstName" type="text" placeholder="Elena" autocomplete="given-name"/>
+                  <div class="error-msg" id="err-firstName">Please enter your first name.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group-lum">
+                  <label class="form-label-lum" for="lastName">Last Name <span style="color:var(--accent)">*</span></label>
+                  <input class="form-control-lum" id="lastName" type="text" placeholder="Lim" autocomplete="family-name"/>
+                  <div class="error-msg" id="err-lastName">Please enter your last name.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group-lum">
+              <label class="form-label-lum" for="email">Email Address <span style="color:var(--accent)">*</span></label>
+              <input class="form-control-lum" id="email" type="email" placeholder="elena@company.com" autocomplete="email"/>
+              <div class="error-msg" id="err-email">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group-lum">
+              <label class="form-label-lum" for="company">Company</label>
+              <input class="form-control-lum" id="company" type="text" placeholder="Voltex Inc." autocomplete="organization"/>
+            </div>
+
+            <div class="form-group-lum">
+              <label class="form-label-lum" for="subject">How can we help? <span style="color:var(--accent)">*</span></label>
+              <select class="form-control-lum form-select-lum" id="subject">
+                <option value="">Select a topic…</option>
+                <option value="demo">Book a product demo</option>
+                <option value="pricing">Pricing &amp; plans</option>
+                <option value="enterprise">Enterprise enquiry</option>
+                <option value="support">Technical support</option>
+                <option value="partnership">Partnership &amp; media</option>
+                <option value="other">Something else</option>
+              </select>
+              <div class="error-msg" id="err-subject">Please select a topic.</div>
+            </div>
+
+            <div class="form-group-lum">
+              <label class="form-label-lum" for="message">Message <span style="color:var(--accent)">*</span></label>
+              <textarea class="form-control-lum" id="message" rows="5" placeholder="Tell us what you're working on…" maxlength="600"></textarea>
+              <div class="char-count"><span id="charCount">0</span> / 600</div>
+              <div class="error-msg" id="err-message">Please write a message (at least 20 characters).</div>
+            </div>
+
+            <div class="consent-box">
+              <input type="checkbox" id="consent"/>
+              <label for="consent">
+                I agree to Lumora's <a href="#">Privacy Policy</a> and consent to being contacted.
+              </label>
+            </div>
+            <div class="error-msg" id="err-consent" style="margin-top:-0.6rem;margin-bottom:0.8rem">
+              Please accept our privacy policy to continue.
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span class="spinner"></span>
+              <span class="btn-text">Send message <i class="bi bi-arrow-right"></i></span>
+            </button>
+
+          </form>
+
+          <div class="success-state" id="successState">
+            <div class="success-icon">✓</div>
+            <div class="success-title">Message sent!</div>
+            <p class="success-sub">Thanks for reaching out. Our team will be in touch within a few hours.<br>
+              In the meantime, explore our <a href="about.html" style="color:var(--accent)">services</a>.
+            </p>
+            <button onclick="resetForm()" style="margin-top:1.2rem;background:var(--lavender);color:var(--accent);border:none;border-radius:50px;padding:0.6rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;cursor:pointer;transition:background 0.2s">
+              Send another message
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTACT INFO -->
+      <div class="contact-col-right">
+        <div class="right-header">
+          <div class="section-label">Contact Details</div>
+          <h2 class="section-title">Other ways to <em>reach us</em></h2>
+        </div>
+
+        <div class="contact-right">
+          <div class="info-list">
+
+            <div class="info-row">
+              <div class="info-icon ic-lav"><i class="bi bi-envelope-fill"></i></div>
+              <div class="info-body">
+                <span class="info-label">Email</span>
+                <div class="info-value">hello@lumora.io</div>
+                <div class="info-sub">General enquiries &amp; support</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon ic-blush"><i class="bi bi-telephone-fill"></i></div>
+              <div class="info-body">
+                <span class="info-label">Phone</span>
+                <div class="info-value">+1 (555) 012-3456</div>
+                <div class="info-sub">Mon–Fri, 9 am–6 pm PST</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon ic-sage"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="info-body">
+                <span class="info-label">Office</span>
+                <div class="info-value">340 Pine Street, Suite 800</div>
+                <div class="info-sub">San Francisco, CA 94104 — Financial District HQ</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon ic-sky"><i class="bi bi-chat-dots-fill"></i></div>
+              <div class="info-body">
+                <span class="info-label">Live Chat</span>
+                <div class="info-value">
+                  Available in-app
+                  <span class="online-badge"><span class="online-dot"></span>Online</span>
+                </div>
+                <div class="info-sub">Log in to start a live chat session.</div>
+              </div>
+            </div>
+
+            <div class="info-row" style="border-bottom:none">
+              <div class="info-icon ic-ink"><i class="bi bi-share-fill"></i></div>
+              <div class="info-body">
+                <span class="social-pill-label">Follow us</span>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="#" class="social-pill social-pill-tw"><i class="bi bi-twitter-x"></i> @lumora</a>
+                  <a href="#" class="social-pill social-pill-li"><i class="bi bi-linkedin"></i> Lumora</a>
+                  <a href="#" class="social-pill social-pill-ig"><i class="bi bi-instagram"></i> lumora.io</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="next-block">
+            <div class="next-section-title">What happens next?</div>
+            <div class="next-step">
+              <div class="next-num">1</div>
+              <div>
+                <div class="next-title">We review your message</div>
+                <div class="next-desc">Your enquiry is routed to the right specialist — usually within minutes.</div>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-num">2</div>
+              <div>
+                <div class="next-title">You get a personal reply</div>
+                <div class="next-desc">A real team member responds — no bots, no templated brush-offs.</div>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-num">3</div>
+              <div>
+                <div class="next-title">We solve it together</div>
+                <div class="next-desc">Whether it's a demo, a fix, or a custom plan — we follow through.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-7">
+        <div class="text-center mb-4 reveal">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title" style="font-size:clamp(1.5rem,2.8vw,2.1rem)">Common questions, <em>honest answers</em></h2>
+        </div>
+        <div class="reveal">
+          <div class="faq-item open">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>How quickly will I hear back?</span>
+              <i class="bi bi-plus faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our team responds within 3 business hours. For urgent issues, use live chat in-app or call us directly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>Is there a free trial?</span>
+              <i class="bi bi-plus faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes — every plan comes with a 14-day free trial, full access, no credit card required.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>Can I book a live demo before signing up?</span>
+              <i class="bi bi-plus faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. Select "Book a product demo" in the form or click "Book a demo" in the hero — a product specialist will schedule a personalised walkthrough.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you offer discounts for startups or non-profits?</span>
+              <i class="bi bi-plus faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes — 40% off for early-stage startups and 60% off for registered non-profits. Reach out via the form to apply.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>How do I cancel my subscription?</span>
+              <i class="bi bi-plus faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Cancel anytime from your account settings with one click — no calls or forms. Access continues until end of billing period.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block modals %}
+<!-- ─── DEMO MODAL ─── -->
+<div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px;border:none;background:var(--cream);box-shadow:0 28px 70px rgba(30,26,46,0.16);">
+      <div class="modal-header border-0 pb-0 pt-3 px-4">
+        <div>
+          <div class="section-label mb-1">No commitment needed</div>
+          <h2 class="modal-title" id="demoModalLabel" style="font-family:'Fraunces',serif;font-size:1.35rem;font-weight:800;letter-spacing:-0.5px;color:var(--ink)">
+            Book a <em style="font-style:italic;color:var(--accent);font-weight:300">live demo</em>
+          </h2>
+        </div>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close" style="opacity:0.4"></button>
+      </div>
+      <div class="modal-body px-4 pt-2 pb-4">
+        <p style="color:var(--ink-soft);font-size:0.84rem;line-height:1.6;margin-bottom:1.1rem;">
+          Get a personalised 30-minute walkthrough tailored to your team's needs.
+        </p>
+        <form novalidate id="demoForm">
+          <div class="row g-2 mb-2">
+            <div class="col-sm-6">
+              <label class="form-label" for="demo-fname" style="font-size:0.77rem;font-weight:500;color:var(--ink)">First Name</label>
+              <input type="text" id="demo-fname" class="form-control" placeholder="Elena"
+                style="border-radius:9px;border:1.5px solid rgba(123,94,167,0.18);background:rgba(255,255,255,0.7);font-size:0.85rem;padding:0.58rem 0.95rem;" required>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="demo-lname" style="font-size:0.77rem;font-weight:500;color:var(--ink)">Last Name</label>
+              <input type="text" id="demo-lname" class="form-control" placeholder="Lim"
+                style="border-radius:9px;border:1.5px solid rgba(123,94,167,0.18);background:rgba(255,255,255,0.7);font-size:0.85rem;padding:0.58rem 0.95rem;" required>
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label" for="demo-email" style="font-size:0.77rem;font-weight:500;color:var(--ink)">Work Email</label>
+            <input type="email" id="demo-email" class="form-control" placeholder="elena@company.com"
+              style="border-radius:9px;border:1.5px solid rgba(123,94,167,0.18);background:rgba(255,255,255,0.7);font-size:0.85rem;padding:0.58rem 0.95rem;" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="demo-team" style="font-size:0.77rem;font-weight:500;color:var(--ink)">Team size</label>
+            <select id="demo-team" class="form-control form-select"
+              style="border-radius:9px;border:1.5px solid rgba(123,94,167,0.18);background:rgba(255,255,255,0.7);font-size:0.85rem;padding:0.58rem 0.95rem;">
+              <option value="" disabled selected>Select team size</option>
+              <option>1–5 people</option>
+              <option>6–20 people</option>
+              <option>21–100 people</option>
+              <option>100+ people</option>
+            </select>
+          </div>
+          <button type="submit"
+            onclick="this.closest('.modal-body').querySelector('#demoForm').style.display='none';this.closest('.modal-body').querySelector('#demoSuccess').style.display='block';"
+            class="btn w-100"
+            style="background:var(--ink);color:#fff;border-radius:50px;padding:0.78rem;font-size:0.87rem;font-weight:500;font-family:'DM Sans',sans-serif;">
+            Book my demo <i class="bi bi-arrow-right ms-1"></i>
+          </button>
+          <p class="text-center mt-2" style="font-size:0.73rem;color:var(--ink-soft)">
+            Free, no commitment. Calendar invite sent within 2 hours.
+          </p>
+        </form>
+        <div id="demoSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
+          <div style="width:56px;height:56px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#4a7c59;margin:0 auto 0.9rem;">✓</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;margin-bottom:0.35rem;color:var(--ink)">You're booked!</div>
+          <p style="color:var(--ink-soft);font-size:0.87rem;line-height:1.6;">We'll send a calendar invite to your email within 2 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const msgEl = document.getElementById('message');
+  const countEl = document.getElementById('charCount');
+  if (msgEl) msgEl.addEventListener('input', () => { countEl.textContent = msgEl.value.length; });
+
+  function setError(id, errId, show) {
+    document.getElementById(id).classList.toggle('error', show);
+    document.getElementById(errId).classList.toggle('show', show);
+  }
+  function setConsentError(show) {
+    document.getElementById('err-consent').classList.toggle('show', show);
+  }
+
+  const fName = document.getElementById('firstName');
+  const lName = document.getElementById('lastName');
+  const eml   = document.getElementById('email');
+  const subj  = document.getElementById('subject');
+  const msg   = document.getElementById('message');
+  const cons  = document.getElementById('consent');
+
+  if (fName) fName.addEventListener('blur', function() { setError('firstName','err-firstName', !this.value.trim()); });
+  if (lName) lName.addEventListener('blur', function() { setError('lastName','err-lastName', !this.value.trim()); });
+  if (eml)   eml.addEventListener('blur', function() { setError('email','err-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value)); });
+  if (subj)  subj.addEventListener('change', function() { setError('subject','err-subject', !this.value); });
+  if (msg)   msg.addEventListener('blur', function() { setError('message','err-message', this.value.trim().length < 20); });
+  if (cons)  cons.addEventListener('change', function() { setConsentError(!this.checked); });
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      if (!fName.value.trim()) { setError('firstName','err-firstName',true); valid=false; }
+      if (!lName.value.trim()) { setError('lastName','err-lastName',true); valid=false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eml.value.trim())) { setError('email','err-email',true); valid=false; }
+      if (!subj.value) { setError('subject','err-subject',true); valid=false; }
+      if (msg.value.trim().length < 20) { setError('message','err-message',true); valid=false; }
+      if (!cons.checked) { setConsentError(true); valid=false; }
+      if (!valid) return;
+      const btn = document.getElementById('submitBtn');
+      btn.classList.add('loading');
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        contactForm.style.display = 'none';
+        document.getElementById('successState').classList.add('show');
+      }, 1800);
+    });
+  }
+
+  function resetForm() {
+    contactForm.reset();
+    countEl.textContent = '0';
+    contactForm.style.display = 'block';
+    document.getElementById('successState').classList.remove('show');
+    document.querySelectorAll('.form-control-lum').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('show'));
+  }
+
+  function toggleFAQ(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+{% endblock %}

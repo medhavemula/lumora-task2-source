@@ -1,0 +1,15 @@
+{
+  "name": "task2-vite-nunjucks",
+  "version": "1.0.0",
+  "description": "Multi-page site using Vite + Nunjucks templating engine",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-nunjucks": "^0.2.0",
+    "nunjucks": "^3.2.4"
+  }
+}

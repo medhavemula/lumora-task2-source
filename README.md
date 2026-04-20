@@ -1,28 +1,34 @@
-# Lumora - Task 2
+# Lumora — Task 2
 
-## 📌 Description
-This project is a multi-page website built using Vite and Nunjucks templating engine.
+## Templating Engine
+**Nunjucks** — templates use `{% extends %}`, `{% block %}`, and `{% include %}` for layout inheritance and partials.
 
-## 🚀 Features
-- Reusable templates (layout, navbar, footer)
-- Multi-page structure (Home, About, Contact)
-- Fast build using Vite
+## Bundler
+**Vite** — handles multi-page builds, asset bundling, and compiles `.njk` templates to static HTML via a custom plugin.
 
-## ⚙️ Setup Instructions
-
-1. Install dependencies:
+## Folder Structure
+Lumoratask2/
+src/
+templates/
+layout.njk          ← base layout
+partials/
+navbar.njk
+footer.njk
+assets/
+style.css
+index.html            ← uses {% extends "layout.njk" %}
+about.html
+contact.html
+dist/                   ← compiled output (deployed to GitHub Pages)
+## How to Run
+```bash
 npm install
+npm run dev      # development server
+npm run build    # compile to dist/
+```
 
-2. Run development server:
-npm run dev
+## Live Demo
+https://medhavemula.github.io/lumora-task2/
 
-3. Build project:
-npm run build
-
-## 🌐 Live Demo
-https://medhavemula.github.io/lumora-bootstrap-ui-task-2/
-
-## 📁 Project Structure
-- src/ → HTML pages
-- templates/ → Nunjucks templates
-- assets/ → CSS files
+## Source Code
+https://github.com/medhavemula/lumora-task2-source
